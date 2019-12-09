@@ -56,6 +56,6 @@ class SimpleKernel extends Kernel
             $first = $this->overrideFirst;
         }
 
-        return parent::locateResource($name, $dir, $first);
+        return parent::locateResource($name);
     }
 }

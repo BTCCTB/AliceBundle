@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-declare(strict_types=1);
+declare (strict_types = 1);
 
 namespace Hautelook\AliceBundle\Resolver\File;
 
@@ -45,8 +45,8 @@ final class KernelFileResolver implements FileResolverInterface
     public function resolveFile(string $file): string
     {
         $realFile = ('@' === $file[0])
-            ? $this->kernel->locateResource($file, null, true)
-            : $file
+        ? $this->kernel->locateResource($file)
+        : $file
         ;
 
         $realFile = realpath($realFile);

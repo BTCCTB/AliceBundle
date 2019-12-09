@@ -100,7 +100,7 @@ class KernelFileResolverTest extends TestCase
         $this->kernel->boot();
 
         $expected = [
-            realpath(__DIR__.'/../../../fixtures/Functional/SimpleBundle/files/foo.yml'),
+            realpath(__DIR__ . '/../../../fixtures/Functional/SimpleBundle/files/foo.yml'),
             __FILE__,
         ];
 
@@ -108,23 +108,6 @@ class KernelFileResolverTest extends TestCase
         $actual = $resolver->resolve($files);
 
         $this->assertSame($expected, $actual);
-    }
-
-    /**
-     * @expectedException \TypeError
-     */
-    public function testThrowsAnErrorIfTheFileResolvedByTheKernelIsNotAString()
-    {
-        $files = [
-            '@SimpleBundle/files/foo.yml',
-        ];
-
-        $this->kernel = new SimpleKernel('SimpleKernel_test', true);
-        $this->kernel->setLocateResourceFirst(false);
-        $this->kernel->boot();
-
-        $resolver = new KernelFileResolver($this->kernel);
-        $resolver->resolve($files);
     }
 
     /**
@@ -166,15 +149,15 @@ class KernelFileResolverTest extends TestCase
             '@SimpleBundle/files/foo.yml',
             '@SimpleBundle/files/bar.yml',
             __FILE__,
-            __DIR__.'/../File/KernelFileResolverTest.php',
+            __DIR__ . '/../File/KernelFileResolverTest.php',
         ];
 
         $this->kernel = new SimpleKernel('SimpleKernel_test', true);
         $this->kernel->boot();
 
         $expected = [
-            realpath(__DIR__.'/../../../fixtures/Functional/SimpleBundle/files/foo.yml'),
-            realpath(__DIR__.'/../../../fixtures/Functional/SimpleBundle/files/bar.yml'),
+            realpath(__DIR__ . '/../../../fixtures/Functional/SimpleBundle/files/foo.yml'),
+            realpath(__DIR__ . '/../../../fixtures/Functional/SimpleBundle/files/bar.yml'),
             __FILE__,
         ];
 
