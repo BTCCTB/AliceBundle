@@ -73,7 +73,7 @@ With [Symfony Flex](https://symfony.com/doc/current/setup/flex.html) (recommende
 # If you do not have Doctrine installed yet:
 composer require doctrine-orm
 
-composer require --dev hautelook/alice-bundle 
+composer require --dev hautelook/alice-bundle
 ```
 
 You're ready to use AliceBundle, and can jump to the next section!
@@ -92,7 +92,7 @@ public function registerBundles()
         // ...
         new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
     ];
-    
+
     if (in_array($this->getEnvironment(), ['dev', 'test'])) {
         //...
         $bundles[] = new Nelmio\Alice\Bridge\Symfony\NelmioAliceBundle();
@@ -112,7 +112,7 @@ Configure the bundle to your needs, for example:
 hautelook_alice:
     fixtures_path: 'fixtures' # Path to which to look for fixtures relative to the project directory or the bundle path. May be a string or an array of strings.
     root_dirs:
-        - '%kernel.root_dir%'
+        - '%kernel.project_dir%'
         - '%kernel.project_dir%'
 ```
 

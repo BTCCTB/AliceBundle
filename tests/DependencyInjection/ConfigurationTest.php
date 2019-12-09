@@ -27,7 +27,7 @@ class ConfigurationTest extends TestCase
         $expected = [
             'fixtures_path' => ['Resources/fixtures'],
             'root_dirs' => [
-                '%kernel.root_dir%',
+                '%kernel.project_dir%',
                 '%kernel.project_dir%',
             ],
         ];
